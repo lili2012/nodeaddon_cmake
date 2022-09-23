@@ -1,0 +1,27 @@
+cmake_minimum_required(VERSION 3.23)
+
+project (occt)
+# get CMAKE_JS variables
+include(GNUInstallDirs)
+message(CMAKE_INSTALL_BINDIR ${CMAKE_INSTALL_FULL__BINDIR})
+set(OpenCASCADE_ROOT "C:/OpenCASCADE-7.6.0-vc14-64/opencascade-7.6.0/cmake")
+find_package(OpenCASCADE CONFIG REQUIRED COMPONENTS FoundationClasses)
+
+include_directories(${OpenCASCADE_INCLUDE_DIR})
+
+set(SOURCE_FILES occt.cc)
+add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES} ${CMAKE_JS_SRC})
+
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_JS_INC})
+target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/node_modules/node-addon-api/")
+
+set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "" SUFFIX ".node")
+
+target_link_libraries(${PROJECT_NAME} PRIVATE ${CMAKE_JS_LIB} TKernel TKMath)
+
+#install(TARGETS ${PROJECT_NAME} )
+message(CMAKE_JS_SRC "${CMAKE_JS_SRC}")
+message(CMAKE_JS_INC "${CMAKE_JS_INC}")
+message(CMAKE_JS_LIB "${CMAKE_JS_LIB}")
+install(TARGETS ${PROJECT_NAME})
+install(IMPORTED_RUNTIME_ARTIFACTS TKernel TKMath)

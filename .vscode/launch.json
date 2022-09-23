@@ -1,0 +1,13 @@
+{
+    "version": "0.2.0",
+    "configurations": [{
+        "type": "cppvsdbg",
+        "request": "launch",
+        "name": "occtAddon",
+        "program": "node",
+        "cwd": "${workspaceFolder}",
+        "args": ["addon.js"],
+        "sourceFileMap": { "c:\\ws": "C:\\Users\\shuya\\AppData\\Local\\node-gyp\\Cache\\16.16.0\\node-v16.16.0" },
+        "symbolOptions": ${config:test},
+    }]
+}

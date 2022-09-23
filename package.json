@@ -1,0 +1,22 @@
+{
+  "name": "occt_wrap",
+  "version": "0.0.0",
+  "description": "Node addon occt",
+  "main": "addon.js",
+  "private": true,
+  "engines": {
+    "node": "~10 >=10.20 || >=12.17"
+  },
+  "cmake-js": {
+    "runtime": "node",
+    "arch": "x64"
+  },
+  "scripts": {
+    "install": "cmake-js install",
+    "test": "node addon.js"
+  },
+  "dependencies": {
+    "bindings": "~1.2.1",
+    "node-addon-api": "^5.0.0"
+  }
+}

@@ -1,0 +1,18 @@
+{
+    "files.associations": {
+        "xiosbase": "cpp"
+    },
+    cmake.useCMakePresets:"always",
+    //use in launch.json
+    "symbolOptions": {
+        "searchPaths": [
+            "C:\\Program Files\\nodejs",
+        ],
+        "searchMicrosoftSymbolServer": false,
+        "cachePath": "%TEMP%\\symcache",
+        // "moduleFilter": {
+        //     "mode": "loadAllButExcluded",
+        //     "excludedModules": [ "DoNotLookForThisOne*.dll" ]
+        // }
+    }
+}
