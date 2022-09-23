@@ -6,7 +6,6 @@
             "displayName": "Visual Studio Community 2019 Debug - amd64",
             "description": "Visual Studio 16 2019 (x64)",
             "generator": "Visual Studio 16 2019",
-            
             "architecture": {
                 "strategy": "set",
                 "value": "x64"
@@ -16,17 +15,31 @@
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}",
-                "CMAKE_JS_SRC":"C:/Users/shuya/AppData/Roaming/npm/node_modules/cmake-js/lib/cpp/win_delay_load_hook.cc",
-                "CMAKE_JS_INC":"C:/Users/shuya/.cmake-js/node-x64/v16.16.0/include/node",
-                "CMAKE_JS_LIB":"C:/Users/shuya/.cmake-js/node-x64/v16.16.0/win-x64/node.lib"
+                "CMAKE_JS_SRC": "C:/Users/shuya/AppData/Roaming/npm/node_modules/cmake-js/lib/cpp/win_delay_load_hook.cc",
+                "CMAKE_JS_INC": "C:/Users/shuya/.cmake-js/node-x64/v16.16.0/include/node",
+                "CMAKE_JS_LIB": "C:/Users/shuya/.cmake-js/node-x64/v16.16.0/win-x64/node.lib"
             },
             "vendor": {
                 "microsoft.com/VisualStudioSettings/CMake/1.0": {
                     "intelliSenseMode": "windows-clang-x64"
                 }
             },
-            "environment": {
-                
+            "environment": {}
+        },
+        {
+            "name": "linux",
+            "displayName": "GCC 11.2.0 x86_64-linux-gnu",
+            "description": "Using compilers: C = /usr/bin/c89-gcc",
+            "binaryDir": "${sourceDir}/build/${presetName}",
+            "generator": "Ninja",
+            "cacheVariables": {
+                "CMAKE_JS_SRC": "",
+                "CMAKE_JS_INC": "/home/shulian/.cmake-js/node-x64/v16.17.0/include/node",
+                "CMAKE_JS_LIB": "",
+                "CMAKE_INSTALL_PREFIX": "${sourceDir}",
+                "CMAKE_CXX_COMPILER": "g++-11",
+				"CMAKE_C_COMPILER": "gcc-11",
+                "CMAKE_BUILD_TYPE": "Debug"
             }
         }
     ],
@@ -34,7 +47,6 @@
         {
             "name": "x64-Debug",
             "description": "",
-            
             "displayName": "",
             "configurePreset": "x64-Debug",
             "targets": [

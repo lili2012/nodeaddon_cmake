@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.22)
 
 project (occt)
 # get CMAKE_JS variables
@@ -19,9 +19,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES PREFIX "" SUFFIX ".node")
 
 target_link_libraries(${PROJECT_NAME} PRIVATE ${CMAKE_JS_LIB} TKernel TKMath)
 
-#install(TARGETS ${PROJECT_NAME} )
-message(CMAKE_JS_SRC "${CMAKE_JS_SRC}")
-message(CMAKE_JS_INC "${CMAKE_JS_INC}")
-message(CMAKE_JS_LIB "${CMAKE_JS_LIB}")
+
 install(TARGETS ${PROJECT_NAME})
 install(IMPORTED_RUNTIME_ARTIFACTS TKernel TKMath)
