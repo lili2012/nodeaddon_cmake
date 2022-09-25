@@ -4,10 +4,11 @@ project (occt)
 # get CMAKE_JS variables
 include(GNUInstallDirs)
 message(CMAKE_INSTALL_BINDIR ${CMAKE_INSTALL_FULL__BINDIR})
-set(OpenCASCADE_ROOT "C:/OpenCASCADE-7.6.0-vc14-64/opencascade-7.6.0/cmake")
+set(CMAKE_INSTALL_RPATH $ORIGIN)
+#set(OpenCASCADE_ROOT "/home/shulian/Desktop/OCCT/lib/cmake/opencascade/")
 find_package(OpenCASCADE CONFIG REQUIRED COMPONENTS FoundationClasses)
 
-include_directories(${OpenCASCADE_INCLUDE_DIR})
+#include_directories(${OpenCASCADE_INCLUDE_DIR})
 
 set(SOURCE_FILES occt.cc)
 add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES} ${CMAKE_JS_SRC})

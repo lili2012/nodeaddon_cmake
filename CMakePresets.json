@@ -28,18 +28,19 @@
         },
         {
             "name": "linux",
-            "displayName": "GCC 11.2.0 x86_64-linux-gnu",
-            "description": "Using compilers: C = /usr/bin/c89-gcc",
+            "displayName": "linux",
+            "description": "download from https://nodejs.org/dist/v16.17.1/ select node-v16.17.1-headers.tar.xz and extract to /usr/include/node",
             "binaryDir": "${sourceDir}/build/${presetName}",
             "generator": "Ninja",
             "cacheVariables": {
                 "CMAKE_JS_SRC": "",
-                "CMAKE_JS_INC": "/home/shulian/.cmake-js/node-x64/v16.17.0/include/node",
+                "CMAKE_JS_INC": "/usr/include/node",
                 "CMAKE_JS_LIB": "",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}",
                 "CMAKE_CXX_COMPILER": "g++-11",
 				"CMAKE_C_COMPILER": "gcc-11",
-                "CMAKE_BUILD_TYPE": "Debug"
+                "CMAKE_BUILD_TYPE": "Debug",
+                "CMAKE_PREFIX_PATH": "/home/shulian/Desktop/OCCT/"
             }
         }
     ],

@@ -1,6 +1,6 @@
 'use strict';
 const util = require('node:util');
-const Example = require('./bin/occt');
+const Example = require('./lib/occt');
 
 const pt1 = new Example.Pnt2d(11,12);
 const dir = new Example.Pnt2d(13,14);
