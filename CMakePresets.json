@@ -33,9 +33,6 @@
             "binaryDir": "${sourceDir}/build/${presetName}",
             "generator": "Ninja",
             "cacheVariables": {
-                "CMAKE_JS_SRC": "",
-                "CMAKE_JS_INC": "/usr/include/node",
-                "CMAKE_JS_LIB": "",
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}",
                 "CMAKE_CXX_COMPILER": "g++-11",
 				"CMAKE_C_COMPILER": "gcc-11",

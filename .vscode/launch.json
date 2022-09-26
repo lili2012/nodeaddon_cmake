@@ -25,7 +25,7 @@
                 "addon.js"
             ],
             "sourceFileMap": {
-                "c:\\ws": "C:\\Users\\shuya\\AppData\\Local\\node-gyp\\Cache\\16.16.0\\node-v16.16.0"
+                "/home/iojs/build/ws/out": "${workspaceFolder}\\thirdparty\\nodesrc"
             },
             "symbolOptions": ${config:test},
         }
