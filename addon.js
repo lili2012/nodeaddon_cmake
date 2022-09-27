@@ -1,6 +1,20 @@
 'use strict';
 const util = require('node:util');
-const Example = require('./lib/occt');
+const os = require('os');
+// Printing os.platform() value
+var platform = os.platform();
+let Example = undefined;
+switch(platform) {
+    case 'linux': 
+    console.log("Linux Platform");
+    Example = require('./lib/occt');
+        break;
+    case 'win32': 
+    console.log("windows platform");
+    Example = require('./bin/occt');
+        break;    
+    default: console.log("unknown platform");
+}
 
 const pt1 = new Example.Pnt2d(11,12);
 const dir = new Example.Pnt2d(13,14);
