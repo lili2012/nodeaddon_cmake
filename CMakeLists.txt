@@ -51,9 +51,13 @@ find_package(OpenCASCADE CONFIG REQUIRED COMPONENTS FoundationClasses)
 message("OpenCASCADE_FOUND " ${OpenCASCADE_FOUND} ${OpenCASCADE_CONFIG})
 INCLUDE_DIRECTORIES(${OpenCASCADE_INCLUDE_DIR})
 
-set(SOURCE_FILES occt.cc win_delay_load_hook.cc)
-add_library(${PROJECT_NAME} SHARED ${SOURCE_FILES})
 
+add_library(${PROJECT_NAME} SHARED)
+target_sources(${PROJECT_NAME} PRIVATE occt.cc)
+
+if(WIN32)
+  target_sources(${PROJECT_NAME} PRIVATE win_delay_load_hook.cc)
+endif()
 
 set(NODE_INC ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/nodeinclude/include/node)
 
