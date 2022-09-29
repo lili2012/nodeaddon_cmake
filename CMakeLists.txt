@@ -49,12 +49,12 @@ set(CMAKE_INSTALL_RPATH $ORIGIN)
 
 find_package(OpenCASCADE CONFIG REQUIRED COMPONENTS FoundationClasses)
 message("OpenCASCADE_FOUND " ${OpenCASCADE_FOUND} ${OpenCASCADE_CONFIG})
-INCLUDE_DIRECTORIES(${OpenCASCADE_INCLUDE_DIR})
+
 
 
 add_library(${PROJECT_NAME} SHARED)
 target_sources(${PROJECT_NAME} PRIVATE occt.cc)
-
+target_include_directories(${PROJECT_NAME} PRIVATE ${OpenCASCADE_INCLUDE_DIR})
 if(WIN32)
   target_sources(${PROJECT_NAME} PRIVATE win_delay_load_hook.cc)
 endif()
