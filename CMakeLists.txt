@@ -17,7 +17,8 @@ if(WIN32)
   FetchContent_Declare(node_pdb
   URL ${pdb_url}
   URL_HASH   SHA256=${pdb_hash}
-  SOURCE_DIR  ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/nodepdb)
+  SOURCE_DIR  ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/nodepdb
+  DOWNLOAD_EXTRACT_TIMESTAMP true)
 
   set(nodelib_path ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/lib/node.lib)
   file(DOWNLOAD ${lib_url} ${nodelib_path})
@@ -35,12 +36,14 @@ endif()
 FetchContent_Declare(node_include
 URL ${inc_url}
 URL_HASH   SHA256=${inc_hash}
-SOURCE_DIR  ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/nodeinclude) 
+SOURCE_DIR  ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/nodeinclude
+DOWNLOAD_EXTRACT_TIMESTAMP true)
 
 FetchContent_Declare(node_src
 URL ${node_server}/node-v16.17.1.tar.xz
 URL_HASH   SHA256=6721feb4152d56d2c6b358ce397abd5a7f1daf09ee2e25c5021b9b4d3f86a330
-SOURCE_DIR  ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/nodesrc) 
+SOURCE_DIR  ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/nodesrc
+DOWNLOAD_EXTRACT_TIMESTAMP true) 
 
 FetchContent_MakeAvailable(node_include node_src)
 
