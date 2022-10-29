@@ -3,38 +3,34 @@
     "configurations": [
         {
             "type": "cppvsdbg",
-            "request": "launch",
-            "name": "occtAddon_windows",
+            "request": "launch", 
             "program": "node",
+            "name": "Debug",
             "cwd": "${workspaceFolder}",
             "args": [
                 "addon.js"
             ],
-            "sourceFileMap": {
-                "c:\\ws": "${workspaceFolder}\\thirdparty\\nodesrc"
+            "stopAtEntry": true,
+            "externalConsole": false,
+            "windows": {
+                "symbolOptions": {
+                    "searchPaths": [
+                        "${workspaceFolder}\\thirdparty\\nodepdb\\"
+                    ],
+                    "searchMicrosoftSymbolServer": false,
+                    "cachePath": "%TEMP%\\symcache",
+                },
+                "sourceFileMap": {
+                    "c:\\ws": "${workspaceFolder}\\thirdparty\\nodesrc"
+                }
             },
-            "symbolOptions": {
-                "searchPaths": [
-                    "C:\\Program Files\\nodejs",
-                    "${workspaceFolder}\\thirdparty\\nodepdb"
-                ],
-                "searchMicrosoftSymbolServer": false,
-                "cachePath": "%TEMP%\\symcache",
-            },
-        },
-        {
-            "type": "cppdbg",
-            "request": "launch",
-            "name": "occtAddon_linux",
-            "program": "/usr/local/bin/node",
-            "cwd": "${workspaceFolder}",
-            "args": [
-                "addon.js"
-            ],
-            "sourceFileMap": {
-                "/home/iojs/build/ws/out": "${workspaceFolder}\\thirdparty\\nodesrc"
-            },
-            "symbolOptions": ${config:test},
+            "linux": {
+                "type": "cppdbg",
+                "program": "/usr/local/bin/node",
+                "sourceFileMap": {
+                    "/home/iojs/build/ws/out": "${workspaceFolder}\\thirdparty\\nodesrc"
+                }
+            }
         }
     ]
 }

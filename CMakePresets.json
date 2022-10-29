@@ -5,7 +5,7 @@
             "name": "x64-Debug",
             "displayName": "Visual Studio Community 2019 Debug - amd64",
             "description": "Visual Studio 16 2019 (x64)",
-            "generator": "Visual Studio 16 2019",
+            "generator": "Visual Studio 17 2022",
             "architecture": {
                 "strategy": "set",
                 "value": "x64"
