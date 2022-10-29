@@ -32,8 +32,8 @@
             "generator": "Ninja",
             "cacheVariables": {
                 "CMAKE_INSTALL_PREFIX": "${sourceDir}",
-                "CMAKE_CXX_COMPILER": "g++-11",
-				"CMAKE_C_COMPILER": "gcc-11",
+                "CMAKE_CXX_COMPILER": "g++",
+				"CMAKE_C_COMPILER": "gcc",
                 "CMAKE_BUILD_TYPE": "Debug",
                 "CMAKE_PREFIX_PATH": "/home/shulian/Desktop/OCCT/"
             }
